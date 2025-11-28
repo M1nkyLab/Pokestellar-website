@@ -1,174 +1,91 @@
+# Pokestellar - Pokémon E-Commerce Website
 
-
-
-# 🐦‍🔥 Pokestellar – A Pokémon E-Commerce Platform
-
-![Project Status](https://img.shields.io/badge/status-active-success.svg)
-![PHP](https://img.shields.io/badge/PHP-8.0%2B-777BB4?style=flat\&logo=php\&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-Database-4479A1?style=flat\&logo=mysql\&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat\&logo=tailwind-css\&logoColor=white)
-
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/c22dea3a-6a24-493d-adf8-28ac661a311c" />
-
-> **Pokestellar** is a fan-made e-commerce website where users can browse, explore, and "adopt" their favorite Pokémon. This project showcases full-stack development skills using **PHP**, **MySQL**, and **Tailwind CSS**.
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/c22dea3a-6a24-493d-adf8-28ac661a311c" alt="Pokestellar Dashboard" width="800">
+  <br><br>
+  <b>Gotta Buy 'Em All! The ultimate destination for Pokémon cards and merchandise.</b>
+</div>
 
 ---
 
-## 📝 Table of Contents
+**Pokestellar** is a responsive e-commerce application built for Pokémon enthusiasts. It features a seamless shopping experience allowing users to browse products, manage their cart, and securely checkout, while providing administrators with a robust dashboard for managing orders and inventory.
 
-* [About](#about)
-* [Features](#features)
-* [Tech Stack](#tech-stack)
-* [Folder Structure](#folder-structure)
-* [Getting Started](#getting-started)
-* [Screenshots](#screenshots)
-* [Contributing](#contributing)
-* [Contact](#contact)
+## 🌟 Key Features
 
----
+Based on the project structure, the application includes the following features:
 
-## 🧐 About <a name="about"></a>
+### 🛍️ User Features
+* **Product Browsing**: View a catalog of Pokémon products with details.
+* **Shopping Cart**: Add items to a cart and manage selections before purchasing.
+* **Checkout System**: Secure checkout process to finalize orders.
+* **Order History**: Users can view their past orders.
+* **User Authentication**: Secure login and logout functionality,.
+* **Informational Pages**: Dedicated pages for "About Us" and "Contact Us",.
 
-Pokestellar is designed to simulate a modern e-commerce experience with a fun Pokémon theme. Users can view product details, manage a shopping cart, and proceed through a mock checkout process. The application focuses on clean UI/UX design and robust backend functionality.
+### 🛠️ Admin Features
+* **Admin Dashboard**: A dedicated interface for administrators to manage the site.
+* **Order Management**: Ability to delete or manage existing orders.
 
----
+## 💻 Technology Stack
 
-## 🚀 Features <a name="features"></a>
+* **Backend**: PHP (Native)
+* **Frontend**: HTML, JavaScript, [Tailwind CSS](https://tailwindcss.com/)
+* **Database**: MySQL (implied by `db_connect.php`)
+* **Package Manager**: npm (Node Package Manager) for managing CSS dependencies.
 
-* 🔍 **Catalog Browsing:** Filter and search through a wide variety of Pokémon
-* 🛒 **Shopping Cart:** Add items, view cart summary, manage quantities
-* 💳 **Mock Checkout:** Simulated purchase flow
-* 📱 **Responsive Design:** Optimized for all screen sizes using Tailwind
-* 🔐 **User Accounts:** (If applicable) Login & registration
-* 🗂️ **Dynamic Backend:** Products served from a MySQL database
+## 📋 Installation Prerequisites
 
----
+Before you begin, ensure you have the following installed:
+1.  **Local Server Environment**: XAMPP, WAMP, or any environment supporting PHP and MySQL.
+2.  **Node.js & npm**: Required to build the Tailwind CSS styles.
+3.  **Code Editor**: VS Code or similar.
 
-## 💻 Tech Stack <a name="tech-stack"></a>
+## 🚀 Installation Guide
 
-| Area         | Technologies                    |
-| ------------ | ------------------------------- |
-| **Frontend** | HTML5, JavaScript, Tailwind CSS |
-| **Backend**  | PHP (Vanilla)                   |
-| **Database** | MySQL (via phpMyAdmin)          |
-| **Tools**    | XAMPP, Git, NPM                 |
+1.  **Clone the Repository**
+    ```bash
+    git clone [https://github.com/your-username/pokestellar-website.git](https://github.com/your-username/pokestellar-website.git)
+    ```
+    *If using XAMPP, place the folder inside `htdocs`.*
 
----
+2.  **Install Dependencies**
+    Open your terminal in the project root and install the necessary node modules:
+    ```bash
+    npm install
+    ```
 
-## 📂 Folder Structure <a name="folder-structure"></a>
+3.  **Build CSS**
+    Generate the Tailwind CSS output file:
+    ```bash
+    npm run build
+    ```
 
-```
-Pokestellar-website/
-├── config/           # Database configuration files
-├── public/           # Public assets (images, icons)
-├── src/              # PHP logic and views
-├── node_modules/     # Tailwind dependencies
-├── output.css        # Compiled Tailwind file
-├── package.json      # NPM scripts and dependencies
-└── README.md         # Project documentation
-```
+4.  **Database Setup**
+    * Create a new database in phpMyAdmin (e.g., `pokestellar_db`).
+    * Import the SQL file (if provided in the repo) or manually set up tables based on `src/db_connect.php`.
+    * Configure your database credentials in `src/db_connect.php`.
 
----
+5.  **Run the Project**
+    * Start your Apache and MySQL modules in XAMPP.
+    * Open your browser and navigate to `http://localhost/pokestellar-website/src/index.php`.
 
-## 🏁 Getting Started <a name="getting-started"></a>
+## 📂 Project Structure
 
-### Prerequisites
-
-* XAMPP (or any PHP/MySQL server)
-* Node.js & npm
-* Web browser
-
----
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/M1nkyLab/Pokestellar-website.git
-cd Pokestellar-website
-```
-
----
-
-### 2. Install Node Dependencies
-
-```bash
-npm install
-```
-
----
-
-### 3. Database Setup
-
-1. Open XAMPP → Start **Apache** & **MySQL**
-2. Visit: `http://localhost/phpmyadmin`
-3. Create a database (example: `pokestellar_db`)
-4. Import the included `.sql` file
-   *(If missing, create tables manually based on code.)*
-
----
-
-### 4. Configure Database Connection
-
-Edit `config/db.php` (or similar):
-
-```php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "pokestellar_db";
-```
-
----
-
-### 5. Build Tailwind (Optional)
-
-```bash
-npx tailwindcss -i ./src/input.css -o ./output.css --watch
-```
-
----
-
-### 6. Launch the App
-
-Move project folder to:
-
-```
-C:\xampp\htdocs\Pokestellar-website
-```
-
-Open in browser:
-
-```
-http://localhost/Pokestellar-website
-```
-
----
-
-## 📸 Screenshots <a name="screenshots"></a>
-
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/afbf29fe-f463-4f82-870c-7b2c51d18c73" />
-
----
-
-## 🤝 Contributing <a name="contributing"></a>
-
-1. Fork the project
-2. Create a new branch
-
-   ```bash
-   git checkout -b feature/AmazingFeature
-   ```
-3. Commit changes
-4. Push the branch
-5. Open a Pull Request
-
----
-
-## 📞 Contact <a name="contact"></a>
-
-**M1nkyLab** — [GitHub Profile](https://www.google.com/search?q=https://github.com/M1nkyLab)
-
-Project Link:
-[https://github.com/M1nkyLab/Pokestellar-website](https://www.google.com/search?q=https://github.com/M1nkyLab/Pokestellar-website)
-
-
+```text
+pokestellar-website/
+├── config/                 # Configuration files
+│   └── tailwind.config.js  # Tailwind CSS configuration
+├── public/                 # Public assets
+│   └── input.css           # Source CSS file
+├── src/                    # Source code (PHP logic & Views)
+│   ├── admin.php           # Admin dashboard
+│   ├── cart.php            # Shopping cart logic
+│   ├── checkout.php        # Order finalization
+│   ├── db_connect.php      # Database connection settings
+│   ├── index.php           # Homepage
+│   ├── login.php           # User login page
+│   ├── product.php         # Product catalog
+│   └── ...
+├── node_modules/           # Node.js dependencies
+├── package.json            # Project metadata and scripts
+└── output.css              # Compiled CSS (Tailwind output)
